@@ -1,0 +1,42 @@
+@import "./styles/premium-motion.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply font-body text-ink-900 bg-ink-50 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    @apply bg-gold-300 text-ink-950;
+  }
+  *:focus-visible {
+    outline: 2px solid #0B2545;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #C9D2E3;
+    border-radius: 999px;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+
+/* Home hero: the mark glows behind the frosted preview card on wide screens */
+@media (max-width: 1023px) { .home-scene__mark { display: none; } }
+@media (min-width: 1024px) { .home-scene__mark { left: 80%; top: 44%; } }
